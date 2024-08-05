@@ -20,6 +20,7 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent, 
     ExtrasComponent, 
     HomeComponent],
+
     
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
