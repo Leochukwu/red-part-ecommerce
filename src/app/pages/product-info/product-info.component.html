@@ -538,7 +538,7 @@ s0.4-0.1,0.5-0.2l1.8-1.8l5.3,5.3c0.2,0.2,0.4,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2c0
                                     </li>
                                     <li class="product-tabs__item">
                                         <a href="#product-tab-reviews">Reviews
-                                            <span class="product-tabs__item-counter">3</span></a>
+                                            <span class="product-tabs__item-counter">{{productReview.length}}</span></a>
                                     </li>
                                     <li class="product-tabs__item">
                                         <a href="#product-tab-analogs">Analogs</a>
@@ -643,23 +643,26 @@ s0.4-0.1,0.5-0.2l1.8-1.8l5.3,5.3c0.2,0.2,0.4,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2c0
                                             </div>
                                         </div>
                                     </div>
+
+
+
                                     <div class="product-tabs__pane" id="product-tab-reviews">
                                         <div class="reviews-view">
                                             <div class="reviews-view__list">
                                                 <div class="reviews-list">
                                                     <ol class="reviews-list__content">
                                                         <li class="reviews-list__item">
-                                                            <div class="review">
+                                                            <div  *ngFor="let item of productReview"   class="review">
                                                                 <div class="review__body">
                                                                     <div class="review__avatar">
-                                                                        <img src="{{ productDetails.thumbnail }}"
+                                                                        <img src="assets/userAvatar.jpg"
                                                                             alt="" />
                                                                     </div>
                                                                     <div class="review__meta">
                                                                         <div class="review__author">
-                                                                            Samantha Smith
+                                                                            {{item.reviewerName}}
                                                                         </div>
-                                                                        <div class="review__date">27 May, 2018</div>
+                                                                        <div class="review__date">{{item.date | date}}</div>
                                                                     </div>
                                                                     <div class="review__rating">
                                                                         <div class="rating">
@@ -681,104 +684,19 @@ s0.4-0.1,0.5-0.2l1.8-1.8l5.3,5.3c0.2,0.2,0.4,0.2,0.5,0.2c0.2,0,0.4-0.1,0.5-0.2c0
                                                                         </div>
                                                                     </div>
                                                                     <div class="review__content typography">
-                                                                        Phasellus id mattis nulla. Mauris velit
-                                                                        nisi, imperdiet vitae sodales in, maximus ut
-                                                                        lectus. Vivamus commodo scelerisque lacus,
-                                                                        at porttitor dui iaculis id. Curabitur
-                                                                        imperdiet ultrices fermentum.
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="reviews-list__item">
-                                                            <div class="review">
-                                                                <div class="review__body">
-                                                                    <div class="review__avatar">
-                                                                        <img src="{{ productDetails.thumbnail }}"
-                                                                            alt="" />
-                                                                    </div>
-                                                                    <div class="review__meta">
-                                                                        <div class="review__author">
-                                                                            Adam Taylor
-                                                                        </div>
-                                                                        <div class="review__date">
-                                                                            12 April, 2018
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="review__rating">
-                                                                        <div class="rating">
-                                                                            <div class="rating__body">
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div class="rating__star"></div>
-                                                                                <div class="rating__star"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="review__content typography">
-                                                                        Aenean non lorem nisl. Duis tempor
-                                                                        sollicitudin orci, eget tincidunt ex semper
-                                                                        sit amet. Nullam neque justo, sodales congue
-                                                                        feugiat ac, facilisis a augue. Donec tempor
-                                                                        sapien et fringilla facilisis. Nam maximus
-                                                                        consectetur diam. Nulla ut ex mollis,
-                                                                        volutpat tellus vitae, accumsan ligula.
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li class="reviews-list__item">
-                                                            <div class="review">
-                                                                <div class="review__body">
-                                                                    <div class="review__avatar">
-                                                                        <img src="{{ productDetails.thumbnail }}"
-                                                                            alt="" />
-                                                                    </div>
-                                                                    <div class="review__meta">
-                                                                        <div class="review__author">
-                                                                            Helena Garcia
-                                                                        </div>
-                                                                        <div class="review__date">
-                                                                            2 January, 2018
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="review__rating">
-                                                                        <div class="rating">
-                                                                            <div class="rating__body">
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                                <div
-                                                                                    class="rating__star rating__star--active">
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="review__content typography">
-                                                                        Duis ac lectus scelerisque quam blandit
-                                                                        egestas. Pellentesque hendrerit eros laoreet
-                                                                        suscipit ultrices.
+                                                                        {{item.comment}}
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </li>
                                                     </ol>
+
+
+
+
+
+
+
                                                     <div class="reviews-list__pagination">
                                                         <ul class="pagination">
                                                             <li class="page-item disabled">

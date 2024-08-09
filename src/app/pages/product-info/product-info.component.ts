@@ -13,7 +13,8 @@ import { ActivatedRoute } from '@angular/router';
 export class ProductInfoComponent implements OnInit {
 
   productId: any;
-  productDetails: any;
+  productDetails: any = {};
+  productReview: any = [];
 
   constructor(private route: ActivatedRoute, private http: HttpClient){
     this.productId = this.route.snapshot.params['id'];
@@ -25,6 +26,7 @@ export class ProductInfoComponent implements OnInit {
     this.http.get('https://dummyjson.com/products/' + this.productId).subscribe(
       (res:any)=>{
         this.productDetails = res;
+        this.productReview = res.reviews;
       },
       (err: any)=>{}
     )
