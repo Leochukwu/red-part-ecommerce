@@ -49,7 +49,6 @@ export class HomeComponent  implements OnInit{
   getProduct(){
     this.http.get('https://dummyjson.com/products').subscribe(
       (res:any)=>{
-        console.table(res.products)
         this.Products = res.products
       },
       (err: any)=>{}
