@@ -13,10 +13,8 @@ export class ShopsComponent implements OnInit{
 
   Products: any = [];
 
-  limit: any = 10;
+  limit: any = 12;
   skip: any = 0;
-
-  length: any;
 
 
 
@@ -44,6 +42,7 @@ export class ShopsComponent implements OnInit{
   nextPage(){
     this.skip = this.limit + this.skip
     this.getProduct
+    console.log(this.getProduct())
 
   }
 
@@ -52,9 +51,8 @@ export class ShopsComponent implements OnInit{
       this.skip = this.skip - this.limit
       this.getProduct
     }
+    console.log(this.getProduct())
 
-
-    
   }
 
 
